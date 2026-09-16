@@ -8,6 +8,7 @@ export default function RootLayout() {
             <StatusBar style='auto' />
             <Stack screenOption={{headerShown: false}}>
                 <Stack.Screen name='index' />
+                <Stack.Screen name='sobre' />
             </Stack>
         </SafeAreaProvider>
     )
