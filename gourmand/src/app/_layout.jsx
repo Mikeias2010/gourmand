@@ -6,9 +6,10 @@ export default function RootLayout() {
     return (
         <SafeAreaProvider>
             <StatusBar style='auto' />
-            <Stack screenOption={{headerShown: false}}>
+            <Stack screenOptions={{headerShown: false}}>
                 <Stack.Screen name='index' />
                 <Stack.Screen name='sobre' />
+                <Stack.Screen name='cardapio' />
             </Stack>
         </SafeAreaProvider>
     )
