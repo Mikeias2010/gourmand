@@ -7,7 +7,7 @@ export default function RootLayout() {
         <SafeAreaProvider>
             <StatusBar style='auto' />
             <Stack screenOptions={{headerShown: false}}>
-                <Stack.Screen name='index' />
+                <Stack.Screen name='/' />
                 <Stack.Screen name='sobre' />
                 <Stack.Screen name='cardapio' />
             </Stack>

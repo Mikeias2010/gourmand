@@ -5,7 +5,11 @@ import { router } from 'expo-router'
 import { Cores } from '@/constants/Cores'
 import { Fontes } from '@/constants/Fontes'
 
-export default function index() {
+export default function Principal() {
+
+    const abrirCardapio = () => {
+        router.push('./cardapio')
+    }
 
     const abrirSobre = () => {
         router.push('./sobre')
@@ -13,6 +17,7 @@ export default function index() {
 
     return (
         <SafeAreaView style={estilos.conteiner}> 
+
             <Text style={estilos.titulo}>Gourmand</Text>
 
             <Pressable
@@ -20,6 +25,13 @@ export default function index() {
                 style={estilos.botao}
             >
                 aaaaaaaaaa
+            </Pressable>
+            
+            <Pressable
+                onPress={abrirCardapio}
+                style={estilos.botao}
+            >
+                aaaaaaaaaa22
             </Pressable>
         </SafeAreaView>
     )

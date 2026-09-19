@@ -1,14 +1,11 @@
 import { StyleSheet, Text, View } from 'react-native'
-import { SafeAreaView } from 'react-native-safe-area-context'
 
 export default function Doces() {
 
     return(
-       <SafeAreaView style={estilos.conteiner}> 
-         <View>
-           <Text>DOCES</Text>
-         </View>
-       </SafeAreaView>
+        <View style={estilos.conteiner}>
+          <Text>DOCES</Text>
+        </View>
 
     )
 }
