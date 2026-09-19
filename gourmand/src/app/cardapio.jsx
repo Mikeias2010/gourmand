@@ -3,7 +3,7 @@ import { router } from  'expo-router'
 
 export default function Cardapio() {
      const abrirSalgados = () => {
-          router.push('./cardapioTabs/salgados')
+          router.push('./(tabs)/cardapio/salgados')
      }
 
      return(

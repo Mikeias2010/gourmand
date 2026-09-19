@@ -1,26 +1,33 @@
 import { StyleSheet, Text, View, Pressable } from 'react-native'
-import { SafeAreaView } from 'react-native-safe-area-context'
 import { router } from 'expo-router'
 
 export default function Sobre() {
-    const abrirIndex = () => {
-        router.push('/')
+
+    const abrirCliente = () => {
+        router.push('./(tabs)/sobre/cliente')
+    }
+
+    const retornar = () => {
+        router.replace('/')
     }
 
     return (
-        <SafeAreaView style={estilos.conteiner}>
-            <View>
-                <Text>Sobre</Text>
+        <View>
+            <Text>Sobre</Text>
 
+            <Pressable
+                onPress={abrirCliente}
+            >
+                Cliente
+            </Pressable>
+                
+            <Pressable
+                onPress={retornar}
+            >
+                Retornar
+            </Pressable>
+        </View>
 
-                <Pressable
-                    onPress={abrirIndex}
-                >
-                    botao
-                </Pressable>
-            </View>
-
-        </SafeAreaView>
     )
 }
 

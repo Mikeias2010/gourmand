@@ -20,18 +20,20 @@ export default function Principal() {
 
             <Text style={estilos.titulo}>Gourmand</Text>
 
-            <Pressable
-                onPress={abrirSobre}
-                style={estilos.botao}
-            >
-                aaaaaaaaaa
-            </Pressable>
-            
+            <Text style={estilos.texto}>VEJA O CARDÁPIO</Text>
             <Pressable
                 onPress={abrirCardapio}
                 style={estilos.botao}
             >
                 aaaaaaaaaa22
+            </Pressable>
+
+            <Text style={estilos.texto}>CONHEÇA A EQUIPE</Text>
+            <Pressable
+                onPress={abrirSobre}
+                style={estilos.botao}
+            >
+                aaaaaaaaaa
             </Pressable>
         </SafeAreaView>
     )
@@ -44,6 +46,9 @@ const estilos = StyleSheet.create({
     },
     titulo: {
         fontSize: Fontes.tamanhoTitulo
+    },
+    texto: {
+        fontSize: Fontes.medio2
     },
     botao: {
         justifyContent: 'center',

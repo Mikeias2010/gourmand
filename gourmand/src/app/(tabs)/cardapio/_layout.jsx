@@ -1,9 +1,9 @@
 import { Tabs } from "expo-router"
 
-export default function comidasLayout(){
+export default function TabsComidasLayout(){
      return(
-          <Tabs>
-               <Tabs.Screen name='/' />
+          <Tabs screenOptions={{headerShown: false}}>
+               <Tabs.Screen name='salgados' />
                <Tabs.Screen name='doces' />
                <Tabs.Screen name='bebidas' />
           </Tabs>

@@ -1,11 +1,16 @@
-import { View, Text } from 'react-native'
+import { View, Text, Pressable } from 'react-native'
+import { router } from 'expo-router'
 
 export default function Salgados() {
+
+     const retornar = () => {
+          router.replace('/')
+     }
+
      return(
           <View>
-               <Text>
-                    AAAAAAAAAAAAATEXTO
-               </Text>
+               <Pressable onPress={retornar}>Voltar</Pressable>
+               <Text>Salgados</Text>
           </View>
      )
 }
