@@ -1,4 +1,4 @@
-import { View, Pressable } from "react-native"
+import { View, Pressable, Text } from "react-native"
 import { router } from  'expo-router'
 
 export default function Cardapio() {
@@ -11,6 +11,8 @@ export default function Cardapio() {
                <Pressable onPress={retornar}>
                     Retornar
                </Pressable>
+
+               <Text>Cliente</Text>
           </View>
      )
 }

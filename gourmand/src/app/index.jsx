@@ -45,7 +45,7 @@ const estilos = StyleSheet.create({
         padding: 10
     },
     titulo: {
-        fontSize: Fontes.tamanhoTitulo
+        fontSize: Fontes.enorme
     },
     texto: {
         fontSize: Fontes.medio2
