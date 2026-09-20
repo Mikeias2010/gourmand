@@ -4,5 +4,5 @@ export const Fontes = {
      media2: 20,
      grande1: 28,
      grande2: 32,
-     enorme: 42,
+     enorme: 40,
 }

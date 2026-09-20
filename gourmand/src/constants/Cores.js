@@ -1,8 +1,9 @@
 export const Cores = {
-    primaria: '#c1121f',
-    primariaClara: '#fdf5e4',
+    primaria: '#b12521',
+    primariaClara: '#fadfd7',
     primariaEscura: '#4B0101',
-    secundaria: '#3579a0',
-    secundariaClara: '#AACADE',
-    secundariaEscura: '#003049'
+    secundaria: '#317196',
+    secundariaClara: '#b9d6e9',
+    secundariaEscura: '#021e2e',
+    terciaria: '#f9de8d'
 }
