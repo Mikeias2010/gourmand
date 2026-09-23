@@ -36,7 +36,7 @@ export default function Principal() {
 
                 <Image 
                     style={estilos.imagemAdereco}
-                    source={require('@/assets/images/restaurante.jpg')} 
+                    source={require('@/assets/images/restaurante.jpeg')} 
                 />
 
                 <Text style={estilos.texto}>VEJA O CARDÁPIO</Text>

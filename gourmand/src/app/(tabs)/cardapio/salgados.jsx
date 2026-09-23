@@ -1,8 +1,9 @@
 import { StyleSheet, View, Text, Pressable } from 'react-native'
+import { SafeAreaView } from "react-native-safe-area-context"
 import { router } from 'expo-router'
 
 import { Fontes } from '@/constants/Fontes'
-import { Botao } from '@/constants/Botao'
+import { Cores } from '@/constants/Cores'
 
 export default function Salgados() {
 
@@ -11,25 +12,63 @@ export default function Salgados() {
      }
 
      return(
-          <View>
+     <SafeAreaView>
+          <View style={estilos.cabecalho}>
                <Pressable onPress={retornar} style={estilos.botao}>Voltar</Pressable>
                <Text style={estilos.titulo}>Salgados</Text>
           </View>
+
+          <View style={estilos.corpo}>
+              <Text style={estilos.texto}>Ratatouille</Text>
+              <Text style={estilos.texto}>Croissant</Text>
+              <Text style={estilos.texto}>Parmentier de Canard</Text>
+              <Text style={estilos.texto}>Cassoulet</Text>
+              <Text style={estilos.texto}>Galette de Sarrasin</Text>
+          </View>
+     </SafeAreaView>
      )
 }
 
 const estilos = StyleSheet.create({
      conteiner: {
-
+        height: '100%',
+        alignItems: 'center',
+        backgroundColor: Cores.primariaClara
      },
      titulo: {
-          fontSize: Fontes.grande2
+        fontSize: Fontes.grande2,
+        position: 'absolute',
+        alignSelf: 'center',
+        color: '#FFE4E6'
      },
+
      botao: {
-          justifyContent: 'center',
-          alignItems: 'center',
-          padding: 3,
-          borderWidth: 2,
-          borderRadius: 5
+        alignSelf: 'flex-start',
+        marginLeft: 10,
+        padding: 3,
+        borderWidth: 2,
+        borderRadius: 5,
+        color: '#F8F9FA'
+     },
+
+     cabecalho: {
+        width: '100%',
+        height: 50,
+        marginBottom: 20,
+        backgroundColor: Cores.terciariaEscura,
+        alignItems: 'center',
+        borderWidth: 2,
+        borderColor: '#2b219c'
+     },
+
+     texto: {
+        marginTop: 10,
+        fontSize: Fontes.medio2,
+        color: Cores.secundariaEscura
+     },
+
+     corpo: {
+        paddingHorizontal: 28,
+        alignItems: 'center'
      }
 })
