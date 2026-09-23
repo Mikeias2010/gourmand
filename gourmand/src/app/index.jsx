@@ -1,143 +1,124 @@
-import { useState } from 'react'
+import { SafeAreaView } from "react-native-safe-area-context";
+import { StyleSheet, Text, Pressable, Image, View } from 'react-native'
 import { router } from 'expo-router'
-import { Text, StyleSheet, TextInput, Pressable, Alert, Image } from 'react-native'
-import { SafeAreaView } from 'react-native-safe-area-context'
-import { MaterialIcons } from '@react-native-vector-icons/material-icons'
+
 import { Cores } from '@/constants/Cores'
 import { Fontes } from '@/constants/Fontes'
 
-export default function index() {
+export default function Principal() {
 
-  const [email, setEmail] = useState('')
-  const [senha, setSenha] = useState('')
+    const abrirCardapio = () => {
+        router.push('./cardapio')
+    }
 
-  const verificarUsuario = () => {
-    router.push('/(tabs)/home')
-  }
+    const abrirSobre = () => {
+        router.push('./sobre')
+    }
 
-  const abrirFundamentos = () => {
-    router.push('/fundamentos')
-  }
+    return (
+        <SafeAreaView style={estilos.conteiner}> 
 
-  const abrirNovoUsuario = () => {
-    router.push('/novoUsuario')
-  }
+            <View style={estilos.cabecalho}>
+                <Text style={estilos.titulo}>Gourmand</Text>
+            </View>
 
-  return (
-    <SafeAreaView style={estilos.conteiner}>
+            
+            <View style={estilos.corpo}>
+                <Text style={estilos.subtitulo}>Bienvenue au restaurant Gourmand!</Text>
+                
+                <Text style={estilos.texto}>
+                    Trouxemos um pedacinho da França direto para o seu dia. No Gourmand, cada prato é preparado com técnicas clássicas do terroir francês, ingredientes frescos e uma pitada de carinho artesanal.
 
-      <Image 
-          style={estilos.fundo}
-          source={require('@/assets/images/layout/fundo.jpg')}
-      />
+                    De croissant quentinhos no café da manhã a clássicos refinados para um jantar especial, navegue pelo nosso cardápio online e escolha suas experiências gastronômicas favoritas.
 
-      <Text style={estilos.titulo}>Eureca!</Text>
+                    Bon appétit! 🍷🥐
+                </Text>
 
-      <TextInput 
-        style={estilos.campo}
-        placeholder='E-mail'
-        placeholderTextColor={Cores.secundariaClara}
-        value={email}
-        onChangeText={setEmail}
-      />
+                <View>
+                    <Image 
+                        style={estilos.imagemAdereco}
+                        source={require('@/assets/images/restaurante.jpeg')} 
+                    />
+                </View>
 
-      <TextInput 
-        style={estilos.campo}
-        placeholder='Senha'
-        placeholderTextColor={Cores.secundariaClara}
-        value={senha}
-        onChangeText={setSenha}
-      />
+                <Text style={estilos.texto}>VEJA O CARDÁPIO</Text>
+                <Pressable
+                    onPress={abrirCardapio}
+                    style={estilos.botao}
+                >
+                    <Text>Cardápio</Text>
+                </Pressable>
 
-      <Pressable 
-        style={estilos.botao}
-        android_ripple={{color: Cores.primariaClara}}
-        onPress={verificarUsuario}
-      >
-        <Text style={estilos.rotulo}>Entrar</Text>
-        <MaterialIcons name="login" size={Fontes.grande1} color={Cores.primariaClara} />
-      </Pressable>
+                <Text style={estilos.texto}>SAIBA UM POUCO SOBRE NÓS</Text>
+                <Pressable
+                    onPress={abrirSobre}
+                    style={estilos.botao}
+                >
+                    <Text>Sobre</Text>
+                </Pressable>
+            </View>
 
-      <Pressable 
-        style={estilos.botao}
-        android_ripple={{color: Cores.primariaClara}}
-        onPress={abrirNovoUsuario}
-      >
-        <Text style={estilos.rotulo}>Novo usuário</Text>
-        <MaterialIcons name="person-add" size={Fontes.grande1} color={Cores.primariaClara} />
-      </Pressable>
-
-      <Pressable                
-          style={ ({ pressed }) => [
-              estilos.botaoFundamentos, 
-              ({ opacity: pressed ? 0.5 : 1 }) 
-          ] }
-          onPress={abrirFundamentos}
-      >
-          <MaterialIcons name="menu-book" size={Fontes.grande2} color={Cores.primariaClara} />
-      </Pressable>
-
-    </SafeAreaView>
-  )
+        </SafeAreaView>
+    )
 }
 
 const estilos = StyleSheet.create({
     conteiner: {
-      flex: 1,
-      justifyContent: 'center',
-      alignItems: 'center',
-      backgroundColor: Cores.primariaEscura,
+        zIndex: -1,
+        height: '100%',
+        alignItems: 'center',
+        backgroundColor: Cores.primariaClara
     },
+
+    cabecalho: {
+        width: '100%',
+        marginBottom: 20,
+        backgroundColor: Cores.primaria,
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderWidth: 4,
+        borderColor: '#c93530'
+    },
+
+    corpo: {
+        paddingHorizontal: 28,
+        alignItems: 'center'
+    },
+
     titulo: {
-      marginTop: -50,
-      marginBottom: 30,
-      fontFamily: Fontes.logo,
-      fontSize: Fontes.extraGrande,
-      color: Cores.primariaClara,
+        fontSize: Fontes.enorme,
+        color: Cores.terciaria,
+        fontFamily: Fontes.logo
     },
-    campo: {
-      backgroundColor: Cores.secundaria,
-      color: Cores.secundariaClara,
-      fontFamily: Fontes.baseRegular,
-      fontSize: Fontes.medio1,
-      height: 50,
-      width: 300,
-      marginVertical: 5,
-      paddingVertical: 10,
-      paddingHorizontal: 15,
-      borderRadius: 5,
+
+    subtitulo: {
+        marginBottom: 6,
+        fontSize: Fontes.grande1,
+        color: Cores.secundariaEscura,
+        textAlign: 'center'
     },
+
+    texto: {
+        marginTop: 10,
+        fontSize: Fontes.medio2,
+        color: Cores.secundariaEscura
+    },
+
     botao: {
-      flexDirection: 'row',
-      justifyContent: 'center',
-      alignItems: 'center',
-      backgroundColor: Cores.primariaEscura,
-      borderColor: Cores.primariaClara,
-      height: 50,
-      width: 300,        
-      borderWidth: 1,
-      borderRadius: 5,
-      marginVertical: 10,
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginVertical: 10,
+        padding: 5,
+        width: 260,
+        height: 36,
+        borderWidth: 2,
+        borderRadius: 5
     },
-    rotulo: {
-      color: Cores.secundariaClara,
-      fontFamily: Fontes.baseRegular,
-      fontSize: Fontes.medio1,
-      marginEnd: 10,
-    },
-    fundo: {
-      position: 'absolute',
-      height: '100%',
-      width: '100%',
-      objectFit: 'fill',    
-      zIndex: -1
-    },
-    botaoFundamentos: {
-      backgroundColor: Cores.primariaEscura,
-      borderColor: Cores.primariaClara,
-      padding: 25,
-      borderRadius: 100,
-      borderWidth: 1,
-      marginTop: 30
+
+    imagemAdereco: {
+        marginTop: 20,
+        margin: 10,
+        width: 350,
+        height: 240
     }
 })
