@@ -1,4 +1,6 @@
 export const Fontes = {
+     titulo: 'PlayfairDisplayBold',
+     logo: 'PinyonScript',
      pequena: 12,
      media1: 16,
      media2: 20,

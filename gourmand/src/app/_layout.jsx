@@ -7,10 +7,15 @@ import { Stack } from 'expo-router'
 export default function RootLayout() {
 
   const [fontes] = useFonts({
-    MontserratLight: require("@/assets/fonts/Montserrat-Light.ttf"),
-    MontserratRegular: require("@/assets/fonts/Montserrat-Regular.ttf"),
-    MontserratBold: require("@/assets/fonts/Montserrat-Bold.ttf"),
-    PermanentMarkerRegular: require("@/assets/fonts/PermanentMarker-Regular.ttf"),
+    NotoSerif: require('@/assets/fonts/NotoSerif-Regular.ttf'),
+    NotoSerifBold: require('@/assets/fonts/NotoSerif-Bold.ttf'),
+    NotoSerifItalic: require('@/assets/fonts/NotoSerif-Italic.ttf'),
+
+    PlayfairDisplay: require('@/assets/fonts/PlayfairDisplay-Regular.ttf'),
+    PlayfairDisplayBold: require('@/assets/fonts/PlayfairDisplay-Bold.ttf'),
+    PlayfairDisplayItalic: require('@/assets/fonts/PlayfairDisplay-Italic.ttf'),
+
+    PinyonScript: require('@/assets/fonts/PinyonScript-Regular.ttf')
   })
 
   if (!fontes) {
@@ -23,8 +28,8 @@ export default function RootLayout() {
       <StatusBar style='light' />
       <Stack screenOptions={{headerShown: false}}>
         <Stack.Screen name='index' />
-        <Stack.Screen name='fundamentos' />
-        <Stack.Screen name='novoUsuario' />
+        <Stack.Screen name='cardapio' />
+        <Stack.Screen name='sobre' />
       </Stack>
     </SafeAreaProvider>
   )
