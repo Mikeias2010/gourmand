@@ -1,6 +1,13 @@
 export const Fontes = {
-     titulo: 'PlayfairDisplayBold',
+     texto: 'NotoSerif',
+     textoNegrito: 'NotoSerifBold',
+     textoItalico: 'NotoSerifItalic',
+
+     titulo: 'PlayfairDisplay',
+     tituloNegrito: 'PlayfairDisplayBold',
+
      logo: 'PinyonScript',
+     
      pequena: 12,
      media1: 16,
      media2: 20,

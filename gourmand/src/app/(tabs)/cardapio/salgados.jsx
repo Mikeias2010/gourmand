@@ -4,6 +4,7 @@ import { router } from 'expo-router'
 
 import { Fontes } from '@/constants/Fontes'
 import { Cores } from '@/constants/Cores'
+import { Cabecalho } from '@/components/cabecalho'
 
 export default function Salgados() {
 
@@ -13,18 +14,19 @@ export default function Salgados() {
 
      return(
      <SafeAreaView>
-          <View style={estilos.cabecalho}>
-               <Pressable onPress={retornar} style={estilos.botao}>Voltar</Pressable>
-               <Text style={estilos.titulo}>Salgados</Text>
-          </View>
+         <View style={estilos.conteiner}>
 
-          <View style={estilos.corpo}>
-              <Text style={estilos.texto}>Ratatouille</Text>
-              <Text style={estilos.texto}>Croissant</Text>
-              <Text style={estilos.texto}>Parmentier de Canard</Text>
-              <Text style={estilos.texto}>Cassoulet</Text>
-              <Text style={estilos.texto}>Galette de Sarrasin</Text>
-          </View>
+            <Cabecalho titulo='Salgados' />
+
+            <View style={estilos.corpo}>
+               <Text style={estilos.texto}>Ratatouille</Text>
+               <Text style={estilos.texto}>Croissant</Text>
+               <Text style={estilos.texto}>Parmentier de Canard</Text>
+               <Text style={estilos.texto}>Cassoulet</Text>
+               <Text style={estilos.texto}>Galette de Sarrasin</Text>
+            </View>
+
+         </View>
      </SafeAreaView>
      )
 }
@@ -33,7 +35,7 @@ const estilos = StyleSheet.create({
      conteiner: {
         height: '100%',
         alignItems: 'center',
-        backgroundColor: Cores.primariaClara
+        backgroundColor: Cores.secundariaClara
      },
      titulo: {
         fontSize: Fontes.grande2,

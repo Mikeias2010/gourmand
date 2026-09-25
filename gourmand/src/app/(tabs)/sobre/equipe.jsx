@@ -1,18 +1,23 @@
 import { View, Pressable, Text } from "react-native"
+import { SafeAreaView } from "react-native-safe-area-context"
 import { router } from  'expo-router'
 
+import { Cabecalho } from "@/components/cabecalho"
+
 export default function Cardapio() {
-     const retornar = () => {
-          router.replace('/')
-     }
 
      return(
-          <View>
-               <Pressable onPress={retornar}>
-                    Retornar
-               </Pressable>
+          <SafeAreaView>
+               
+               <View>
+                    <Cabecalho titulo='Equipe' />
 
-               <Text>Equipe</Text>
-          </View>
+                    <View>
+                         <Text>Equipe</Text>
+                    </View>
+
+               </View>
+
+          </SafeAreaView>
      )
 }

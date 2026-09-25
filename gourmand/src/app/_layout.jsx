@@ -13,7 +13,6 @@ export default function RootLayout() {
 
     PlayfairDisplay: require('@/assets/fonts/PlayfairDisplay-Regular.ttf'),
     PlayfairDisplayBold: require('@/assets/fonts/PlayfairDisplay-Bold.ttf'),
-    PlayfairDisplayItalic: require('@/assets/fonts/PlayfairDisplay-Italic.ttf'),
 
     PinyonScript: require('@/assets/fonts/PinyonScript-Regular.ttf')
   })

@@ -3,7 +3,7 @@ export const Cores = {
     primariaClara: '#fadfd7',
     primariaEscura: '#4B0101',
     secundaria: '#317196',
-    secundariaClara: '#b9d6e9',
+    secundariaClara: '#e8f5fe',
     secundariaEscura: '#021e2e',
     terciaria: '#f9de8d',
     terciariaEscura: '#1A2536'

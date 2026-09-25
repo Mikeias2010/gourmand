@@ -4,6 +4,7 @@ import { router } from 'expo-router'
 
 import { Cores } from '@/constants/Cores'
 import { Fontes } from '@/constants/Fontes'
+import { Cabecalho } from "@/components/cabecalho";
 
 export default function Principal() {
 
@@ -11,16 +12,14 @@ export default function Principal() {
         router.push('./cardapio')
     }
 
-    const abrirSobre = () => {
-        router.push('./sobre')
+    const abrirCliente = () => {
+        router.push('./(tabs)/sobre/cliente')
     }
 
     return (
         <SafeAreaView style={estilos.conteiner}> 
 
-            <View style={estilos.cabecalho}>
-                <Text style={estilos.titulo}>Gourmand</Text>
-            </View>
+            <Cabecalho titulo='Gourmand' inicial={true} />
 
             
             <View style={estilos.corpo}>
@@ -51,7 +50,7 @@ export default function Principal() {
 
                 <Text style={estilos.texto}>SAIBA UM POUCO SOBRE NÓS</Text>
                 <Pressable
-                    onPress={abrirSobre}
+                    onPress={abrirCliente}
                     style={estilos.botao}
                 >
                     <Text>Sobre</Text>
@@ -70,38 +69,25 @@ const estilos = StyleSheet.create({
         backgroundColor: Cores.primariaClara
     },
 
-    cabecalho: {
-        width: '100%',
-        marginBottom: 20,
-        backgroundColor: Cores.primaria,
-        justifyContent: 'center',
-        alignItems: 'center',
-        borderWidth: 4,
-        borderColor: '#c93530'
-    },
-
     corpo: {
-        paddingHorizontal: 28,
+        marginTop: 24,
+        paddingHorizontal: 30,
         alignItems: 'center'
-    },
-
-    titulo: {
-        fontSize: Fontes.enorme,
-        color: Cores.terciaria,
-        fontFamily: Fontes.logo
     },
 
     subtitulo: {
         marginBottom: 6,
         fontSize: Fontes.grande1,
         color: Cores.secundariaEscura,
-        textAlign: 'center'
+        textAlign: 'center',
+        fontFamily: Fontes.titulo
     },
 
     texto: {
         marginTop: 10,
         fontSize: Fontes.medio2,
-        color: Cores.secundariaEscura
+        color: Cores.secundariaEscura,
+        fontFamily: Fontes.texto
     },
 
     botao: {
