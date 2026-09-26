@@ -5,6 +5,7 @@ import { router } from 'expo-router'
 import { Fontes } from '@/constants/Fontes'
 import { Cores } from '@/constants/Cores'
 import { Cabecalho } from '@/components/cabecalho'
+import { Subcabecalho } from '@/components/subcabecalho'
 
 export default function Salgados() {
 
@@ -53,7 +54,8 @@ export default function Salgados() {
      return (
           <SafeAreaView style={estilos.container}>
 
-               <Cabecalho titulo='Salgados' />
+               <Cabecalho titulo='Cardápio' />
+               <Subcabecalho telaAtual='salgados' />
 
                <ScrollView>
 
@@ -139,7 +141,7 @@ const estilos = StyleSheet.create({
 
      corpo: {
           paddingHorizontal: 12,
-          paddingBottom: 20,
+          paddingVertical: 20,
           flexDirection: 'row',
           flexWrap: 'wrap',
           justifyContent: 'space-between'

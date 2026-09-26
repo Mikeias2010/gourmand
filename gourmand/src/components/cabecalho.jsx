@@ -41,7 +41,6 @@ const estilos = StyleSheet.create({
      cabecalho: {
           width: '100%',
           height: 60,
-          marginBottom: 20,
           backgroundColor: Cores.terciariaEscura, 
           alignItems: 'center',
           justifyContent: 'center',
@@ -62,7 +61,8 @@ const estilos = StyleSheet.create({
         fontSize: Fontes.grande2,
         position: 'absolute',
         alignSelf: 'center',
-        color: Cores.terciaria
+        color: Cores.terciaria,
+        fontFamily: Fontes.titulo
      },
 
      logo: {

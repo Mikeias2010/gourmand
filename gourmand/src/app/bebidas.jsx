@@ -4,18 +4,22 @@ import { router } from 'expo-router'
 
 import { Fontes } from '@/constants/Fontes'
 import { Cores } from '@/constants/Cores'
+
+import { Cabecalho } from '@/components/cabecalho'
+import { Subcabecalho } from '@/components/subcabecalho'
+
 export default function Salgados() {
 
      const retornar = () => {
-                   router.replace('/')
+               router.replace('/')
           }
      
      return(
           <SafeAreaView>
-               <View style={estilos.cabecalho}>
-                    <Pressable onPress={retornar} style={estilos.botao}>Voltar</Pressable>
-                    <Text style={estilos.titulo}>Bebidas</Text>
-               </View>
+               <Cabecalho titulo='Cardápio' />
+
+               <Subcabecalho telaAtual='bebidas' />  
+               
                   
                <View style={estilos.corpo}>
                     <Text style={estilos.texto}>XXXXXX</Text>
@@ -66,6 +70,7 @@ const estilos = StyleSheet.create({
 
      corpo: {
         paddingHorizontal: 28,
+        paddingVertical: 20,
         alignItems: 'center'
      }
 })

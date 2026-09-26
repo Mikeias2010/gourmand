@@ -18,7 +18,7 @@ export default function TabsSobreLayout(){
                     tabBarStyle: {
                          backgroundColor: Cores.terciariaEscura,
                          paddingTop: 6,
-                         height: 60 + (insets.bottom || 0),
+                         height: 70 + (insets.bottom || 0),
                          paddingBottom: insets.bottom || 0
                     }
                }}

@@ -28,7 +28,9 @@ export default function RootLayout() {
       <Stack screenOptions={{headerShown: false}}>
         <Stack.Screen name='index' />
         <Stack.Screen name='cardapio' />
-        <Stack.Screen name='sobre' />
+        <Stack.Screen name='salgados' />
+        <Stack.Screen name='doces' />
+        <Stack.Screen name='bebidas' />
       </Stack>
     </SafeAreaProvider>
   )

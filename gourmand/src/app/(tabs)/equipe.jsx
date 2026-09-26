@@ -20,6 +20,10 @@ export default function Cardapio() {
                               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse euismod, lorem eu sollicitudin venenatis, diam risus ultrices sapien, hendrerit accumsan risus erat vitae ante. Sed ac nibh ac lorem elementum scelerisque. Duis id tortor quis dolor dapibus commodo. Nunc vitae dolor id leo blandit euismod quis eu ligula. Sed laoreet magna arcu, at bibendum sem malesuada eget. Pellentesque augue est, mollis id ipsum non, gravida ultricies tortor. Sed odio sapien, cursus sit amet tempor eget, vestibulum vel dolor. Pellentesque eu turpis ut turpis ornare molestie vel et elit.
                          </Text>
 
+                         <Text>
+                              Proposta. Tipo de Culinária. Itens principais e cardápio. Ambiente.  Cliente / Público Alvo. Origem.
+                         </Text>
+
                     </View>
 
                </View>

@@ -1,27 +1,38 @@
-import { View, Pressable, StyleSheet } from "react-native"
+import { View, Pressable, StyleSheet, Text } from "react-native"
 import { router } from  'expo-router'
 
 import { Cores } from "@/constants/Cores"
 import { Fontes } from '@/constants/Fontes'
+import { Cabecalho } from "@/components/cabecalho"
+import { Subcabecalho } from "@/components/subcabecalho"
 
 export default function Cardapio() {
      const abrirSalgados = () => {
-          router.push('./(tabs)/cardapio/salgados')
+          router.push('./salgados')
      }
 
      const abrirDoces = () => {
-          router.push('./(tabs)/cardapio/doces')
+          router.push('./doces')
      }
 
      return(
           <View style={estilos.conteiner}>
+               
+               <Cabecalho titulo='Cardápio' />
+
+               <Subcabecalho telaAtual='cardapio' />
+
                <Pressable onPress={abrirSalgados}>
-                    Abrir Salgados
+                    <Text>Abrir Salgados</Text>
                </Pressable>
                
                <Pressable onPress={abrirDoces}>
-                    Abrir Doces
+                    <Text>Abrir Doces</Text>
                </Pressable>
+
+               <Text>
+                    Principais pratos:
+               </Text>
           </View>
      )
 }

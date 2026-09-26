@@ -13,7 +13,7 @@ export default function Principal() {
     }
 
     const abrirCliente = () => {
-        router.push('./(tabs)/sobre/cliente')
+        router.push('./cliente')
     }
 
     return (
