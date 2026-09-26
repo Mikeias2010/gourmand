@@ -4,6 +4,8 @@ import { router } from 'expo-router'
 import { Cores } from "@/constants/Cores"
 import { Fontes } from "@/constants/Fontes"
 
+import { MaterialIcons } from '@react-native-vector-icons/material-icons'
+
 
 export function Cabecalho({titulo, inicial}){
      const retornar = () => {
@@ -14,7 +16,7 @@ export function Cabecalho({titulo, inicial}){
           <View style={inicial == true ? estilos.cabecalhoInicio : estilos.cabecalho}>
 
                {inicial==true ? <></> :
-                    <Pressable onPress={retornar} style={estilos.botao}>Voltar</Pressable>
+                    <Pressable onPress={retornar} style={estilos.botao}><MaterialIcons name='exit-to-app' style={estilos.icone} /></Pressable>
                }
 
                <Text style={titulo == 'Gourmand' ? estilos.logo : estilos.titulo}>
@@ -38,20 +40,23 @@ const estilos = StyleSheet.create({
 
      cabecalho: {
           width: '100%',
-          height: 50,
+          height: 60,
           marginBottom: 20,
           backgroundColor: Cores.terciariaEscura, 
           alignItems: 'center',
+          justifyContent: 'center',
           borderWidth: 2,
           borderColor: '#2b219c'
      },
      botao: {
         alignSelf: 'flex-start',
-        marginLeft: 10,
-        padding: 3,
-        borderWidth: 2,
-        borderRadius: 5,
-        color: '#F8F9FA'
+        width: 30,
+        height: 30,
+        marginLeft: 18
+     },
+     icone: {
+          color: Cores.terciaria,
+          fontSize: Fontes.grande1
      },
      titulo: {
         fontSize: Fontes.grande2,

@@ -4,6 +4,7 @@ import { router } from 'expo-router'
 
 import { Fontes } from '@/constants/Fontes'
 import { Cores } from '@/constants/Cores'
+import { Cabecalho } from '@/components/cabecalho'
 
 export default function Doces() {
 
@@ -13,10 +14,8 @@ export default function Doces() {
 
     return(
         <SafeAreaView>
-                  <View style={estilos.cabecalho}>
-                       <Pressable onPress={retornar} style={estilos.botao}>Voltar</Pressable>
-                       <Text style={estilos.titulo}>Doces</Text>
-                  </View>
+
+               <Cabecalho titulo='Doces' />
         
                   <View style={estilos.corpo}>
                       <Text style={estilos.texto}>Crème Brulle</Text>

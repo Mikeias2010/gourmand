@@ -53,22 +53,7 @@ export default function Salgados() {
      return (
           <SafeAreaView style={estilos.container}>
 
-               <View style={estilos.cabecalho}>
-
-                    <Pressable
-                         onPress={retornar}
-                         style={estilos.botao}
-                    >
-                         <Text style={estilos.textoBotao}>
-                              Voltar
-                         </Text>
-                    </Pressable>
-
-                    <Text style={estilos.titulo}>
-                         Salgados
-                    </Text>
-
-               </View>
+               <Cabecalho titulo='Salgados' />
 
                <ScrollView>
 
@@ -121,7 +106,7 @@ const estilos = StyleSheet.create({
 
      container: {
           flex: 1,
-          backgroundColor: Cores.primariaClara
+          backgroundColor: Cores.secundariaClara
      },
 
      cabecalho: {

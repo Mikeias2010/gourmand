@@ -6,5 +6,5 @@ export const Cores = {
     secundariaClara: '#e8f5fe',
     secundariaEscura: '#021e2e',
     terciaria: '#f9de8d',
-    terciariaEscura: '#1A2536'
+    terciariaEscura: '#202c3d'
 }
