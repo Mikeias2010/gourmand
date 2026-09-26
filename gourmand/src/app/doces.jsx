@@ -1,6 +1,5 @@
-import { StyleSheet, Text, View, Pressable } from 'react-native'
+import { StyleSheet, Text, View } from 'react-native'
 import { SafeAreaView } from "react-native-safe-area-context"
-import { router } from 'expo-router'
 
 import { Fontes } from '@/constants/Fontes'
 import { Cores } from '@/constants/Cores'
@@ -9,10 +8,6 @@ import { Cabecalho } from '@/components/cabecalho'
 import { Subcabecalho } from '@/components/subcabecalho'
 
 export default function Doces() {
-
-      const retornar = () => {
-            router.replace('/')
-     }
 
     return(
         <SafeAreaView>
@@ -32,7 +27,7 @@ export default function Doces() {
 const estilos = StyleSheet.create ({
 
     conteiner: {
-        height: '100%',
+        height: '100vh',
         alignItems: 'center',
         backgroundColor: Cores.primariaClara
     },
@@ -51,16 +46,6 @@ const estilos = StyleSheet.create ({
         borderRadius: 5,
         color: '#F8F9FA'
     },
-
-    cabecalho: {
-        width: '100%',
-        height: 50,
-        marginBottom: 20,
-        backgroundColor: Cores.terciariaEscura,
-        alignItems: 'center',
-        borderWidth: 2,
-        borderColor: '#2b219c'
-     },
 
      texto: {
         marginTop: 10,

@@ -2,6 +2,8 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { StyleSheet, Text, Pressable, Image, View } from 'react-native'
 import { router } from 'expo-router'
 
+import { MaterialIcons } from '@react-native-vector-icons/material-icons'
+ 
 import { Cores } from '@/constants/Cores'
 import { Fontes } from '@/constants/Fontes'
 import { Cabecalho } from "@/components/cabecalho";
@@ -32,6 +34,16 @@ export default function Principal() {
 
                     Bon appétit! 🍷🥐
                 </Text>
+                
+                <Text style={estilos.texto}>Saiba mais sobre o restaurante!</Text>
+                <Pressable
+                    onPress={abrirCliente}
+                    style={estilos.botao}
+                >
+                    <Text style={estilos.elementoBotao}>
+                        Sobre <MaterialIcons name='arrow-outward' style={estilos.elementoBotao} />
+                    </Text>
+                </Pressable>
 
                 <View>
                     <Image 
@@ -45,16 +57,11 @@ export default function Principal() {
                     onPress={abrirCardapio}
                     style={estilos.botao}
                 >
-                    <Text>Cardápio</Text>
+                    <Text style={estilos.elementoBotao}>
+                        Cardápio <MaterialIcons name='arrow-outward' style={estilos.elementoBotao} />
+                    </Text>
                 </Pressable>
 
-                <Text style={estilos.texto}>SAIBA UM POUCO SOBRE NÓS</Text>
-                <Pressable
-                    onPress={abrirCliente}
-                    style={estilos.botao}
-                >
-                    <Text>Sobre</Text>
-                </Pressable>
             </View>
 
         </SafeAreaView>
@@ -64,7 +71,7 @@ export default function Principal() {
 const estilos = StyleSheet.create({
     conteiner: {
         zIndex: -1,
-        height: '100%',
+        height: '100vh',
         alignItems: 'center',
         backgroundColor: Cores.primariaClara
     },
@@ -95,16 +102,23 @@ const estilos = StyleSheet.create({
         alignItems: 'center',
         marginVertical: 10,
         padding: 5,
-        width: 260,
+        width: 200,
         height: 36,
         borderWidth: 2,
-        borderRadius: 5
+        borderRadius: 5,
+        backgroundColor: Cores.primaria,
+    },
+    elementoBotao: {
+        color: Cores.primariaClara,
+        fontFamily: Fontes.tituloNegrito,
+        fontSize: Fontes.media1
     },
 
     imagemAdereco: {
         marginTop: 20,
         margin: 10,
         width: 350,
-        height: 240
+        height: 240,
+        borderRadius: 5
     }
 })
