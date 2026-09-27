@@ -68,7 +68,8 @@ const estilos = StyleSheet.create({
         marginTop: 10,
         fontSize: Fontes.medio2,
         color: Cores.secundariaEscura,
-        fontFamily: Fontes.texto
+        fontFamily: Fontes.texto,
+        textAlign: 'justify'
     },
 
     imagem: {

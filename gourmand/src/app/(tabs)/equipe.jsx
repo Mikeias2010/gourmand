@@ -24,11 +24,11 @@ export default function Equipe() {
                                    trabalho acadêmico sem fins lucrativos.
                               </Text>
 
-                              <Image style={estilos.imagem} source={require('@/assets/images/restaurante.jpeg')} />
+                              <Image style={estilos.imagem} source={require('@/assets/images/dev-1.jpg')} />
                               
                               <Text style={estilos.rotulo}>Desenvolvedor 1 - Miquéias</Text>
 
-                                   <Image style={estilos.imagem} source={require('@/assets/images/restaurante.jpeg')} />
+                                   <Image style={estilos.imagem} source={require('@/assets/images/dev-2.webp')} />
                               <Text style={estilos.rotulo}>Desenvolvedor 2 - Yohana</Text>
                          
                          </View>
@@ -62,7 +62,8 @@ const estilos = StyleSheet.create({
           marginTop: 15,
           fontSize: Fontes.medio2,
           color: Cores.secundariaEscura,
-          fontFamily: Fontes.texto
+          fontFamily: Fontes.texto,
+          textAlign: 'justify'
      },
      rotulo: {
           marginTop: 22,

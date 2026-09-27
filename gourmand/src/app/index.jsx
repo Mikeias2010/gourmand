@@ -14,6 +14,10 @@ export default function Principal() {
         router.push('./cardapio')
     }
 
+    const abrirCategoria = (pagina) => {
+        router.push(`./${pagina}`)
+    }
+
     const abrirCliente = () => {
         router.push('./cliente')
     }
@@ -27,6 +31,10 @@ export default function Principal() {
 
                 <View style={estilos.corpo}>
                     <Text style={estilos.subtitulo}>Bienvenue au restaurant Gourmand!</Text>
+
+                    <Image  source={require('@/assets/images/bandeira-da-franca.webp')} 
+                            style={[estilos.imagemAdereco, {borderRadius:'100%'}]} 
+                    />
                     
                     {/* Introdução */}
                     <Text style={estilos.texto}>
@@ -45,7 +53,7 @@ export default function Principal() {
                     {/* Redirect Sobre */}
                     <View>
                         <Image 
-                            style={estilos.imagemAdereco}
+                            style={estilos.imagemPrincipal}
                             source={require('@/assets/images/restaurante.jpeg')} 
                         />
                     </View>
@@ -64,31 +72,39 @@ export default function Principal() {
 
                     {/* Cards */}
                     <Text style={estilos.subtitulo}>Confira alguns dos nossos pratos!</Text>
+                    <Text style={estilos.nota}>(Clique nas imagens para ir direto para a categoria desejada!)</Text>
+
 
                     <ScrollView style={estilos.scroll} contentContainerStyle={estilos.scrollConteiner} horizontal>
                         <View style={estilos.imagensConteiner}>
 
-
-                            <View style={estilos.card}>
-                                <Image  style={estilos.cardImagem}
-                                        source={require('@/assets/images/croissant.jpg')} 
-                                    />
-                                <Text style={estilos.texto}>Croissant</Text>
-                            </View>
+                            <Pressable onPress={() => abrirCategoria('salgados')}>
+                                <View style={estilos.card}>
+                                    <Image  style={estilos.imagemAdereco}
+                                            source={require('@/assets/images/croissant.jpg')} 
+                                            />
+                                    <Text style={estilos.texto}>Croissant - Salgado</Text>
+                                </View>
+                            </Pressable>
                                 
-                            <View style={estilos.card}>
-                                <Image  style={estilos.cardImagem}
-                                        source={require('@/assets/images/croissant.jpg')} 
-                                    />
-                                <Text style={estilos.texto}>Croissant</Text>
-                            </View>
+                            <Pressable onPress={() => abrirCategoria('doces')}>
+                                <View style={estilos.card}>
+                                    <Image  style={estilos.imagemAdereco}
+                                            source={require('@/assets/images/petit-gateau.jpg')} 
+                                        />
+                                    <Text style={estilos.texto}>Petit Gâteau - Doce</Text>
+                                </View>
+                            </Pressable>
 
-                            <View style={estilos.card}>
-                                <Image  style={estilos.cardImagem}
-                                        source={require('@/assets/images/croissant.jpg')} 
-                                    /> 
-                                <Text style={estilos.texto}>Croissant</Text>
-                            </View>
+                            <Pressable onPress={() => abrirCategoria('bebidas')}>
+                                <View style={estilos.card}>
+                                    <Image  style={estilos.imagemAdereco}
+                                            source={require('@/assets/images/chocolat-chaud.jpg')} 
+                                        /> 
+                                    <Text style={estilos.texto}>Chocolat Chaud - Bebida</Text>
+                                </View>
+                            </Pressable>
+
                         </View>
                     </ScrollView>
 
@@ -119,6 +135,7 @@ const estilos = StyleSheet.create({
 
     corpo: {
         marginTop: 24,
+        paddingBottom: 55,
         paddingHorizontal: 30,
         alignItems: 'center'
     },
@@ -135,7 +152,16 @@ const estilos = StyleSheet.create({
         marginTop: 10,
         fontSize: Fontes.medio2,
         color: Cores.secundariaEscura,
-        fontFamily: Fontes.texto
+        fontFamily: Fontes.texto,
+        textAlign: 'justify'
+    },
+    
+    nota: {
+        marginTop: 10,
+        fontSize: Fontes.pequena,
+        color: Cores.primariaEscura,
+        fontFamily: Fontes.texto,
+        textAlign: 'center'
     },
 
     botao: {
@@ -148,18 +174,26 @@ const estilos = StyleSheet.create({
         borderRadius: 5,
         backgroundColor: Cores.primaria,
     },
+
     elementoBotao: {
         color: Cores.primariaClara,
         fontFamily: Fontes.tituloNegrito,
         fontSize: Fontes.media1
     },
 
-    imagemAdereco: {
+    imagemPrincipal: {
         marginTop: 20,
         margin: 10,
         width: 350,
         height: 240,
         borderRadius: 5
+    },
+    
+    imagemAdereco: {
+        marginVertical: 6,
+        borderRadius: 15,
+        width: 160,
+        height: 160,
     },
 
     scroll: {
@@ -167,6 +201,7 @@ const estilos = StyleSheet.create({
     },
     
     scrollConteiner: {
+        marginVertical: 10,
         width: 0,
         height: 250,
     },
@@ -175,14 +210,14 @@ const estilos = StyleSheet.create({
         display: 'flex',
         flexDirection: 'row',
         alignItems: 'center',
-        gap: 14,
+        gap: 15,
+        paddingHorizontal: 20,
         padding: 10,
         backgroundColor: '#ffffffc7',
         borderRadius: 5
     },
 
     card: {
-        padding: 10,
         width: 180,
         height: 220,
         backgroundColor: Cores.terciaria,
@@ -190,11 +225,6 @@ const estilos = StyleSheet.create({
         borderRadius: 10,
         borderWidth: 2,
         borderColor: '#d4b865'
-    },
-    
-    cardImagem: {
-        borderRadius: 15,
-        width: 160,
-        height: 160,
     }
+    
 })
