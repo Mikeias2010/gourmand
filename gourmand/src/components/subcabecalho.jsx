@@ -1,9 +1,11 @@
+
 import { View, Pressable, Text, StyleSheet } from 'react-native'
 import { router } from 'expo-router'
 
 import { Cores } from "@/constants/Cores"
 import { Fontes } from "@/constants/Fontes"
 
+import { MaterialIcons } from '@react-native-vector-icons/material-icons'
 
 export function Subcabecalho({telaAtual}){
      
@@ -29,28 +31,43 @@ export function Subcabecalho({telaAtual}){
 
                <Pressable
                     onPress={abrirCardapio}
+                    style={estilos.item}
                >
-                    <Text style={telaAtual != 'cardapio' ? estilos.texto : estilos.ativa}>Todos</Text>
+                    <Text style={telaAtual != 'cardapio' ? estilos.texto : estilos.ativa}>
+                         Todos
+                    </Text>
+                    <MaterialIcons name='restaurant' style={estilos.icone}/>
                </Pressable>
 
                <Pressable
                     onPress={abrirSalgados}
+                    style={estilos.item}
                >
-                    <Text style={telaAtual != 'salgados' ? estilos.texto : estilos.ativa}>Salgados</Text>
+                    <Text style={telaAtual != 'salgados' ? estilos.texto : estilos.ativa}>
+                         Salgados
+                    </Text>
+                    <MaterialIcons name='fastfood' style={estilos.icone}/>
                </Pressable>
 
                <Pressable
                     onPress={abrirDoces}
+                    style={estilos.item}
                >
-                    <Text style={telaAtual != 'doces' ? estilos.texto : estilos.ativa}>Doces</Text>
+                    <Text style={telaAtual != 'doces' ? estilos.texto : estilos.ativa}>
+                         Doces
+                    </Text>
+                    <MaterialIcons name='cake' style={estilos.icone}/>
                </Pressable>
                
                <Pressable
                     onPress={abrirBebidas}
+                    style={estilos.item}
                >
-                    <Text style={telaAtual != 'bebidas' ? estilos.texto : estilos.ativa}>Bebidas</Text>
+                    <Text style={telaAtual != 'bebidas' ? estilos.texto : estilos.ativa}>
+                         Bebidas
+                    </Text>
+                    <MaterialIcons name='local-cafe' style={estilos.icone}/>
                </Pressable>
-
 
           </View>
      )
@@ -68,6 +85,12 @@ const estilos = StyleSheet.create({
           justifyContent: 'space-evenly'
      },
 
+     item: {
+          flexDirection: 'row',
+          alignItems: 'center',
+          gap: 4
+     },
+
      texto: {
           fontSize: Fontes.media1,
           color: Cores.secundariaClara,
@@ -78,6 +101,10 @@ const estilos = StyleSheet.create({
           fontSize: Fontes.media1,
           color: Cores.terciaria,
           fontFamily: Fontes.tituloNegrito
-     }
+     },
 
+     icone: {
+          color: Cores.terciaria,
+          fontSize: Fontes.media1
+     }
 })
