@@ -1,6 +1,5 @@
-import { StyleSheet, View, Text, Pressable, Image, ScrollView } from 'react-native'
+import { StyleSheet, View, Text, Image, ScrollView } from 'react-native'
 import { SafeAreaView } from "react-native-safe-area-context"
-import { router } from 'expo-router'
 
 import { Fontes } from '@/constants/Fontes'
 import { Cores } from '@/constants/Cores'
@@ -8,10 +7,6 @@ import { Cabecalho } from '@/components/cabecalho'
 import { Subcabecalho } from '@/components/subcabecalho'
 
 export default function Salgados() {
-
-     const retornar = () => {
-          router.replace('/')
-     }
 
      const pratos = [
           {
@@ -104,17 +99,6 @@ const estilos = StyleSheet.create({
      container: {
           flex: 1,
           backgroundColor: Cores.secundariaClara
-     },
-
-     cabecalho: {
-          width: '100%',
-          height: 50,
-          marginBottom: 20,
-          backgroundColor: Cores.terciariaEscura,
-          alignItems: 'center',
-          justifyContent: 'center',
-          borderWidth: 2,
-          borderColor: '#2b219c'
      },
 
      titulo: {

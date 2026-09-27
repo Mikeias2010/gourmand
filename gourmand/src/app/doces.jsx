@@ -1,4 +1,3 @@
-
 import { StyleSheet, View, Text, Image, ScrollView } from 'react-native'
 import { SafeAreaView } from "react-native-safe-area-context"
 
@@ -48,7 +47,7 @@ export default function Doces() {
           }
      ]
 
-     return(
+     return (
           <SafeAreaView style={estilos.container}>
 
                <Cabecalho titulo='Cardápio' />

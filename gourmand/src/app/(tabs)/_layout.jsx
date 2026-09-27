@@ -14,9 +14,12 @@ export default function TabsSobreLayout(){
           <Tabs 
                screenOptions={{
                     headerShown: false,
+                    tabBarActiveTintColor: Cores.secundariaClara,
+                    tabBarInactiveTintColor: Cores.secundaria,
 
                     tabBarStyle: {
                          backgroundColor: Cores.terciariaEscura,
+
                          paddingTop: 6,
                          height: 70 + (insets.bottom || 0),
                          paddingBottom: insets.bottom || 0

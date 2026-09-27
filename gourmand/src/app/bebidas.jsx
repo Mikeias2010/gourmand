@@ -47,28 +47,37 @@ export default function Bebidas() {
           }
      ]
 
-     return(
+     return (
           <SafeAreaView style={estilos.container}>
+
                <Cabecalho titulo='Cardápio' />
+
                <Subcabecalho telaAtual='bebidas' />
+
                <ScrollView>
+
                     <View style={estilos.corpo}>
+
                          {bebidas.map((bebida, index) => (
 
                               <View
                                    style={estilos.card}
                                    key={index}
                               >
+
                                    <Text style={estilos.nome}>
                                         {bebida.nome}
                                    </Text>
+
                                    <Image
                                         source={bebida.imagem}
                                         style={estilos.imagem}
                                    />
+
                                    <Text style={estilos.descricao}>
                                         {bebida.descricao}
                                    </Text>
+
                                    <Text style={estilos.ingredientes}>
                                         <Text style={estilos.destaque}>
                                              Ingredientes:
@@ -79,6 +88,7 @@ export default function Bebidas() {
                                    <Text style={estilos.preco}>
                                         {bebida.preco}
                                    </Text>
+
                               </View>
 
                          ))}

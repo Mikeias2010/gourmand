@@ -10,7 +10,7 @@ export const Fontes = {
      
      pequena: 12,
      media1: 16,
-     media2: 20,
+     media2: 22,
      grande1: 27,
      grande2: 32,
      enorme: 40,

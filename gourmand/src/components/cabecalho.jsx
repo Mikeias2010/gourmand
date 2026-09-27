@@ -15,8 +15,10 @@ export function Cabecalho({titulo, inicial}){
      return(
           <View style={inicial == true ? estilos.cabecalhoInicio : estilos.cabecalho}>
 
-               {inicial==true ? <></> :
-                    <Pressable onPress={retornar} style={estilos.botao}><MaterialIcons name='exit-to-app' style={estilos.icone} /></Pressable>
+               {inicial==true ? <></> 
+                    : <Pressable onPress={retornar} style={estilos.botao}>
+                         <MaterialIcons name='exit-to-app' style={estilos.icone} />
+                    </Pressable>
                }
 
                <Text style={titulo == 'Gourmand' ? estilos.logo : estilos.titulo}>

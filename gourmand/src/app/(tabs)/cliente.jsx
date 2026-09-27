@@ -1,27 +1,42 @@
-import { View, Pressable, Text, StyleSheet } from "react-native"
+import { View, Text, StyleSheet, Image } from "react-native"
 import { SafeAreaView } from "react-native-safe-area-context"
-import { router } from  'expo-router'
 
-import { Cores } from "@/constants/Cores"
-import { Fontes } from '@/constants/Fontes';
 import { Cabecalho } from "@/components/cabecalho"
+import { Cores } from '@/constants/Cores'
+import { Fontes } from '@/constants/Fontes'
 
-export default function Cardapio() {
+export default function Cliente() {
 
      return(
           <SafeAreaView>
-
+               
                <View style={estilos.conteiner}>
-
                     <Cabecalho titulo='Cliente' />
 
                     <View style={estilos.corpo}>
 
+                         <Text style={estilos.titulo}>O Restaurante</Text>
+
                          <Text style={estilos.texto}>
-                              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse euismod, lorem eu sollicitudin venenatis, diam risus ultrices sapien, hendrerit accumsan risus erat vitae ante. Sed ac nibh ac lorem elementum scelerisque. Duis id tortor quis dolor dapibus commodo. Nunc vitae dolor id leo blandit euismod quis eu ligula. Sed laoreet magna arcu, at bibendum sem malesuada eget. Pellentesque augue est, mollis id ipsum non, gravida ultricies tortor. Sed odio sapien, cursus sit amet tempor eget, vestibulum vel dolor. Pellentesque eu turpis ut turpis ornare molestie vel et elit.
+                               O Gourmand é um restaurante inspirado na cultura e na culinária francesa, 
+                               criado para proporcionar uma experiência que vai além da gastronomia. 
+                               Em nosso espaço, sabores, aromas e tradições se encontram para transportar 
+                               nossos clientes à França por meio de pratos cuidadosamente preparados e 
+                               de uma atmosfera inspirada no charme francês.
+                         </Text>
+
+
+                         <Image style={estilos.imagem} source={require('@/assets/images/franca.jpg')} />
+                         
+                         <Text style={estilos.texto}>
+                              Nossa proposta é valorizar a riqueza e a diversidade da gastronomia francesa, 
+                              combinando receitas tradicionais, ingredientes selecionados e um ambiente acolhedor. 
+                              Seja para conhecer novos sabores ou simplesmente desfrutar de uma boa refeição, 
+                              o Gourmand convida você a descobrir a França através de uma experiência gastronômica única.
                          </Text>
 
                     </View>
+
                </View>
 
           </SafeAreaView>
@@ -31,7 +46,7 @@ export default function Cardapio() {
 const estilos = StyleSheet.create({
      conteiner: {
         zIndex: -1,
-        height: '100%',
+        height: '100vh',
         alignItems: 'center',
         backgroundColor: Cores.secundariaClara
     },
@@ -42,10 +57,25 @@ const estilos = StyleSheet.create({
         alignItems: 'center'
     },
 
+     titulo: {
+          marginTop: 15,
+          fontSize: Fontes.enorme,
+          color: Cores.primariaEscura,
+          fontFamily: Fontes.logo
+     },
+
     texto: {
         marginTop: 10,
         fontSize: Fontes.medio2,
         color: Cores.secundariaEscura,
         fontFamily: Fontes.texto
     },
+
+    imagem: {
+          width: '80%',
+          maxWidth: 280,
+          height: 180,
+          marginVertical: 18,
+          borderRadius: 5
+    }
 })
