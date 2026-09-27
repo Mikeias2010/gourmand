@@ -1,6 +1,6 @@
 
-import { Tabs } from "expo-router";
-import { useSafeAreaInsets } from "react-native-safe-area-context";
+import { Tabs } from "expo-router"
+import { useSafeAreaInsets } from "react-native-safe-area-context"
 import { MaterialIcons } from '@react-native-vector-icons/material-icons'
 
 import { Cores } from "@/constants/Cores";

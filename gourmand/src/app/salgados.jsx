@@ -58,48 +58,43 @@ export default function Salgados() {
                <Subcabecalho telaAtual='salgados' />
 
                <ScrollView>
-
                     <View style={estilos.corpo}>
-
                          {pratos.map((prato, index) => (
 
-                              <View
-                                   style={estilos.card}
-                                   key={index}
-                              >
+                     <View
+                          style={estilos.card}
+                          key={index}
+                    >
 
-                                   <Text style={estilos.nome}>
-                                        {prato.nome}
-                                   </Text>
+                    <Text style={estilos.nome}>
+                           {prato.nome}
+                    </Text>
+                     <Image
+                         source={prato.imagem}
+                         style={estilos.imagem}
+                    />
 
-                                   <Image
-                                        source={prato.imagem}
-                                        style={estilos.imagem}
-                                   />
+                    <Text style={estilos.descricao}>
+                         {prato.descricao}
+                    </Text>
 
-                                   <Text style={estilos.descricao}>
-                                        {prato.descricao}
-                                   </Text>
+                    <Text style={estilos.ingredientes}>
+                    <Text style={estilos.destaque}>
+                          Ingredientes:
+                    </Text>{' '}
+                          {prato.ingredientes}
+                    </Text>
 
-                                   <Text style={estilos.ingredientes}>
-                                        <Text style={estilos.destaque}>
-                                             Ingredientes:
-                                        </Text>{' '}
-                                        {prato.ingredientes}
-                                   </Text>
+                     <Text style={estilos.preco}>
+                          {prato.preco}
+                     </Text>
 
-                                   <Text style={estilos.preco}>
-                                        {prato.preco}
-                                   </Text>
+                     </View>
 
-                              </View>
-
-                         ))}
+     ))}
 
                     </View>
-
                </ScrollView>
-
           </SafeAreaView>
      )
 }
